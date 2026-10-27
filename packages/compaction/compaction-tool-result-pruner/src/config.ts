@@ -8,8 +8,8 @@ export const PRUNE_MARKER = '\n\n[... tool result middle pruned ...]\n\n'
 
 /** Low-friction defaults for coding-agent tool output. */
 export const DEFAULTS: ResolvedConfig = deepFreeze({
-  thresholdChars: 8192,
-  headChars: 4096,
+  thresholdChars: 4096,
+  headChars: 1024,
   tailChars: 1024,
 })
 
