@@ -102,7 +102,7 @@ describe('tool-result pruning configuration', () => {
     raw.headChars = 1
     expect(resolved).toEqual({ thresholdChars: 100, headChars: 20, tailChars: 10 })
     expect(Object.isFrozen(resolved)).toBe(true)
-    expect(DEFAULTS).toEqual({ thresholdChars: 8192, headChars: 4096, tailChars: 1024 })
+    expect(DEFAULTS).toEqual({ thresholdChars: 4096, headChars: 1024, tailChars: 1024 })
     expect(Object.isFrozen(DEFAULTS)).toBe(true)
   })
 

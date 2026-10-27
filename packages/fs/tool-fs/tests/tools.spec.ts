@@ -288,7 +288,7 @@ describe('read tool', () => {
     const { ctx } = await setup()
     const result = await call(ctx, 'read', { file_path: 'a.txt', limit: 99999 })
     expect(result.isError).toBe(true)
-    expect(text(result)).toContain('less than or equal to 2000')
+    expect(text(result)).toContain('less than or equal to 150')
   })
 
   it('rejects a blank file_path', async () => {
@@ -350,7 +350,7 @@ describe('read tool', () => {
   it('surfaces a byte-capped read as a truncated footer', async () => {
     const { ctx, fs } = await setup()
     // Many long lines so the window hits the byte cap before EOF.
-    fs.files.set('key:big.txt', Array.from({ length: 2000 }, () => 'y'.repeat(100)).join('\n'))
+    fs.files.set('key:big.txt', Array.from({ length: 2000 }, () => 'y'.repeat(1000)).join('\n'))
     const result = await call(ctx, 'read', { file_path: 'big.txt' })
     expect(result.isError).toBe(false)
     expect(text(result)).toContain('Output capped.')

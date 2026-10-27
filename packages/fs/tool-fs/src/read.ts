@@ -12,7 +12,7 @@ import { buildWindow, formatReadOutput, langFromPath, readMetaFromMeta } from '.
 import { resolveRegularReadTarget } from './read-target.ts'
 
 /** Default and maximum number of lines returned by one `read` call (the `readLimit` config). */
-export const READ_LIMIT = 2000
+export const READ_LIMIT = 150
 
 /**
  * Default streaming threshold (the `readStreamMinSize` config): files at or
